@@ -1,0 +1,11 @@
+{application, gs1tools, [
+	{description, "Library to work with GS1 General Specifications"},
+	{vsn, "0.0.1"},
+	{modules, []},
+	{registered, []},
+	{applications, [
+		kernel,
+        stdlib
+    ]},
+	{env, []}
+]}.
