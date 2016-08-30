@@ -52,7 +52,8 @@ gs1_test_() ->
                         ?assertEqual(ok, ?TM:verify_gs1_checksum(18,"376104250021234569")),
                         ?assertEqual(ok, ?TM:verify_gs1_checksum(18,<<"376104250021234569">>)),
                         ?assertEqual({error,<<"Invalid GS1 checksum">>}, ?TM:verify_gs1_checksum(18,"376104250021234560")),
-                        ?assertEqual({error,<<"Invalid GS1 checksum">>}, ?TM:verify_gs1_checksum(18,<<"376104250021234560">>))
+                        ?assertEqual({error,<<"Invalid GS1 checksum">>}, ?TM:verify_gs1_checksum(18,<<"376104250021234560">>)),
+                        ?assertEqual({error, <<"GS1 Tag contain not only integers">>}, ?TM:verify_gs1_checksum(18,<<"37610425f021234569">>))
                     end
                 },
                 {<<"by default validate/1 must work with gtin-14 format">>,
